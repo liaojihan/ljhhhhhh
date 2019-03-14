@@ -19,8 +19,6 @@ import com.ruoyi.project.system.user.domain.User;
 
 /**
  * web层通用数据处理
- * 
- * @author ruoyi
  */
 public class BaseController
 {

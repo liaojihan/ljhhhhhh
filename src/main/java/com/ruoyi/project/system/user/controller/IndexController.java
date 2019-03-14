@@ -35,15 +35,12 @@ public class IndexController extends BaseController
         List<Menu> menus = menuService.selectMenusByUser(user);
         mmap.put("menus", menus);
         mmap.put("user", user);
-        mmap.put("copyrightYear", ruoYiConfig.getCopyrightYear());
         return "index";
     }
 
     // 系统介绍
     @GetMapping("/system/main")
-    public String main(ModelMap mmap)
-    {
-        mmap.put("version", ruoYiConfig.getVersion());
+    public String main() {
         return "main";
     }
 }

@@ -45,8 +45,7 @@ public class UserController extends BaseController
 
     @RequiresPermissions("system:user:view")
     @GetMapping()
-    public String user()
-    {
+    public String user() {
         return prefix + "/user";
     }
 

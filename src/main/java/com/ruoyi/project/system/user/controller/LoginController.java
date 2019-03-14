@@ -17,7 +17,7 @@ import com.ruoyi.framework.web.domain.AjaxResult;
 
 /**
  * 登录验证
- * 
+ *
  * @author ruoyi
  */
 @Controller
