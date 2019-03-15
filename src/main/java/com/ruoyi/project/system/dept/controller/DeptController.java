@@ -44,18 +44,15 @@ public class DeptController extends BaseController
     @RequiresPermissions("system:dept:list")
     @GetMapping("/list")
     @ResponseBody
-    public List<Dept> list(Dept dept)
-    {
-        List<Dept> deptList = deptService.selectDeptList(dept);
-        return deptList;
+    public List<Dept> list(Dept dept) {
+        return deptService.selectDeptList(dept);
     }
 
     /**
      * 新增部门
      */
     @GetMapping("/add/{parentId}")
-    public String add(@PathVariable("parentId") Long parentId, ModelMap mmap)
-    {
+    public String add(@PathVariable("parentId") Long parentId, ModelMap mmap) {
         mmap.put("dept", deptService.selectDeptById(parentId));
         return prefix + "/add";
     }

@@ -17,6 +17,8 @@ import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -42,6 +44,8 @@ import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 public class ShiroConfig
 {
     public static final String PREMISSION_STRING = "perms[\"{0}\"]";
+
+    private static Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
 
     // Session超时时间，单位为毫秒（默认30分钟）
     @Value("${shiro.session.expireTime}")
@@ -91,6 +95,7 @@ public class ShiroConfig
     {
         net.sf.ehcache.CacheManager cacheManager = net.sf.ehcache.CacheManager.getCacheManager("ruoyi");
         EhCacheManager em = new EhCacheManager();
+        logger.info("--- 准备缓存管理器 ----");
         if (StringUtils.isNull(cacheManager))
         {
             em.setCacheManager(new net.sf.ehcache.CacheManager(getCacheManagerConfigFileInputStream()));
@@ -297,6 +302,8 @@ public class ShiroConfig
         filterChainDefinitionMap.put("/**", "user,onlineSession,syncOnlineSession");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 
+        logger.info("shiro factory is started");
+
         return shiroFilterFactoryBean;
     }
 
@@ -317,8 +324,7 @@ public class ShiroConfig
     @Bean
     public SyncOnlineSessionFilter syncOnlineSessionFilter()
     {
-        SyncOnlineSessionFilter syncOnlineSessionFilter = new SyncOnlineSessionFilter();
-        return syncOnlineSessionFilter;
+        return new SyncOnlineSessionFilter();
     }
 
     /**

@@ -38,7 +38,7 @@ import com.ruoyi.project.system.user.domain.User;
  * 
  * @author ruoyi
  */
-public class UserRealm extends AuthorizingRealm
+public class    UserRealm extends AuthorizingRealm
 {
     private static final Logger log = LoggerFactory.getLogger(UserRealm.class);
 
@@ -72,7 +72,9 @@ public class UserRealm extends AuthorizingRealm
         else
         {
             roles = roleService.selectRoleKeys(user.getUserId());
+            System.out.println("roles ---" + roles);
             menus = menuService.selectPermsByUserId(user.getUserId());
+            System.out.println("menus ---" + menus);
             // 角色加入AuthorizationInfo认证对象
             info.setRoles(roles);
             // 权限加入AuthorizationInfo认证对象

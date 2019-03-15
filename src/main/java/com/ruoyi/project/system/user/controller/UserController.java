@@ -109,8 +109,7 @@ public class UserController extends BaseController
     @Log(title = "用户管理", businessType = BusinessType.INSERT)
     @PostMapping("/add")
     @ResponseBody
-    public AjaxResult addSave(User user)
-    {
+    public AjaxResult addSave(User user) {
         if (StringUtils.isNotNull(user.getUserId()) && User.isAdmin(user.getUserId()))
         {
             return error("不允许修改超级管理员用户");
