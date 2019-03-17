@@ -7,7 +7,7 @@ import com.ruoyi.framework.web.domain.BaseEntity;
 /**
  * 部门表 sys_dept
  * 
- * @author ruoyi
+ * @author ljh
  */
 public class Dept extends BaseEntity
 {

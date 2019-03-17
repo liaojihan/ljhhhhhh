@@ -8,16 +8,16 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 /**
  * 启动程序
  * 
- * @author ruoyi
+ * @author ljh
  */
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
 @MapperScan("com.ruoyi.project.*.*.mapper")
-public class RuoYiApplication
+public class XiWaApplication
 {
     public static void main(String[] args)
     {
         // System.setProperty("spring.devtools.restart.enabled", "false");
-        SpringApplication.run(RuoYiApplication.class, args);
+        SpringApplication.run(XiWaApplication.class, args);
         System.out.println("(♥◠‿◠)ﾉﾞ  喜娃启动成功   ლ(´ڡ`ლ)ﾞ  \n");
     }
 }

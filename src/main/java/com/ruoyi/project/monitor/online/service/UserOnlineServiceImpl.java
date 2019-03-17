@@ -14,7 +14,7 @@ import com.ruoyi.project.monitor.online.mapper.UserOnlineMapper;
 /**
  * 在线用户 服务层处理
  * 
- * @author ruoyi
+ * @author ljh
  */
 @Service
 public class UserOnlineServiceImpl implements IUserOnlineService

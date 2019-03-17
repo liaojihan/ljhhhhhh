@@ -18,7 +18,7 @@ import com.ruoyi.project.system.role.domain.Role;
 /**
  * 部门管理 服务实现
  * 
- * @author ruoyi
+ * @author ljh
  */
 @Service
 public class DeptServiceImpl implements IDeptService

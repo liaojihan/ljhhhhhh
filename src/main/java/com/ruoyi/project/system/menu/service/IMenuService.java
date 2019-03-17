@@ -12,7 +12,7 @@ import com.ruoyi.project.system.user.domain.User;
 /**
  * 菜单 业务层
  * 
- * @author ruoyi
+ * @author ljh
  */
 public interface IMenuService
 {

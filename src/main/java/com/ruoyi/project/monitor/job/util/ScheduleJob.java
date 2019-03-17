@@ -21,7 +21,7 @@ import com.ruoyi.project.monitor.job.service.IJobLogService;
 /**
  * 定时任务
  * 
- * @author ruoyi
+ * @author ljh
  *
  */
 @DisallowConcurrentExecution

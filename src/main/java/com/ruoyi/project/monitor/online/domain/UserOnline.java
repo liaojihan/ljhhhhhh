@@ -9,7 +9,7 @@ import com.ruoyi.project.monitor.online.domain.OnlineSession.OnlineStatus;
 /**
  * 当前在线会话 sys_user_online
  * 
- * @author ruoyi
+ * @author ljh
  */
 public class UserOnline extends BaseEntity
 {

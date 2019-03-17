@@ -11,7 +11,7 @@ import com.ruoyi.project.system.dict.mapper.DictDataMapper;
 /**
  * 字典 业务层处理
  * 
- * @author ruoyi
+ * @author ljh
  */
 @Service
 public class DictDataServiceImpl implements IDictDataService

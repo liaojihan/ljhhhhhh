@@ -6,7 +6,7 @@ import com.ruoyi.project.system.role.domain.RoleDept;
 /**
  * 角色与部门关联表 数据层
  * 
- * @author ruoyi
+ * @author ljh
  */
 public interface RoleDeptMapper
 {

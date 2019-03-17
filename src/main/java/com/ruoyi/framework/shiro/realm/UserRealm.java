@@ -36,7 +36,7 @@ import com.ruoyi.project.system.user.domain.User;
 /**
  * 自定义Realm 处理登录 权限
  * 
- * @author ruoyi
+ * @author ljh
  */
 public class    UserRealm extends AuthorizingRealm
 {

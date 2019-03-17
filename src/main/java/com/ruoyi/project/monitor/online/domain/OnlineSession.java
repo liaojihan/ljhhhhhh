@@ -5,7 +5,7 @@ import org.apache.shiro.session.mgt.SimpleSession;
 /**
  * 在线用户会话属性
  * 
- * @author ruoyi
+ * @author ljh
  */
 public class OnlineSession extends SimpleSession
 {

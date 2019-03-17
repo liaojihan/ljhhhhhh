@@ -9,7 +9,7 @@ import com.google.common.collect.Maps;
 /**
  * Entity基类
  * 
- * @author ruoyi
+ * @author ljh
  */
 public class BaseEntity implements Serializable
 {

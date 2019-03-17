@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 线程相关工具类.
  * 
- * @author ruoyi
+ * @author ljh
  */
 public class Threads
 {

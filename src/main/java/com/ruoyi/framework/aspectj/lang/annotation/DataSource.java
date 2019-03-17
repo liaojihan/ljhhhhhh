@@ -10,7 +10,7 @@ import com.ruoyi.framework.aspectj.lang.enums.DataSourceType;
 /**
  * 自定义多数据源切换注解
  * 
- * @author ruoyi
+ * @author ljh
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

@@ -24,7 +24,7 @@ import com.ruoyi.project.system.user.domain.User;
 /**
  * 菜单 业务层处理
  * 
- * @author ruoyi
+ * @author ljh
  */
 @Service
 public class MenuServiceImpl implements IMenuService

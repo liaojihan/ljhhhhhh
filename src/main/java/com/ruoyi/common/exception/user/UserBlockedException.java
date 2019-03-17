@@ -3,7 +3,7 @@ package com.ruoyi.common.exception.user;
 /**
  * 用户锁定异常类
  * 
- * @author ruoyi
+ * @author ljh
  */
 public class UserBlockedException extends UserException
 {

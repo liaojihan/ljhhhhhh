@@ -23,7 +23,7 @@ import com.ruoyi.project.system.role.domain.Role;
 /**
  * 部门信息
  * 
- * @author ruoyi
+ * @author ljh
  */
 @Controller
 @RequestMapping("/system/dept")

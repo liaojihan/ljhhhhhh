@@ -6,7 +6,7 @@ import com.ruoyi.project.system.dict.domain.DictData;
 /**
  * 字典 业务层
  * 
- * @author ruoyi
+ * @author ljh
  */
 public interface IDictDataService
 {

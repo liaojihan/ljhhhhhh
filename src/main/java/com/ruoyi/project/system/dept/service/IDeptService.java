@@ -8,7 +8,7 @@ import com.ruoyi.project.system.role.domain.Role;
 /**
  * 部门管理 服务层
  * 
- * @author ruoyi
+ * @author ljh
  */
 public interface IDeptService
 {

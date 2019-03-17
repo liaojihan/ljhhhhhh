@@ -12,7 +12,7 @@ import com.ruoyi.common.utils.text.Convert;
 /**
  * 客户端工具类
  * 
- * @author ruoyi
+ * @author ljh
  */
 public class ServletUtils
 {

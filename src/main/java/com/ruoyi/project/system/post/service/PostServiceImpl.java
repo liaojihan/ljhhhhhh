@@ -15,7 +15,7 @@ import com.ruoyi.project.system.user.mapper.UserPostMapper;
 /**
  * 岗位信息 服务层处理
  * 
- * @author ruoyi
+ * @author ljh
  */
 @Service
 public class PostServiceImpl implements IPostService

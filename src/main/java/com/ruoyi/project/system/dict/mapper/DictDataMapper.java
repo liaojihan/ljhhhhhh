@@ -7,7 +7,7 @@ import com.ruoyi.project.system.dict.domain.DictData;
 /**
  * 字典表 数据层
  * 
- * @author ruoyi
+ * @author ljh
  */
 public interface DictDataMapper
 {

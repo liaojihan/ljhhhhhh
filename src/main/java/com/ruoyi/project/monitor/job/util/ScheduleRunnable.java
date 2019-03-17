@@ -9,7 +9,7 @@ import com.ruoyi.common.utils.spring.SpringUtils;
 /**
  * 执行定时任务
  * 
- * @author ruoyi
+ * @author ljh
  *
  */
 public class ScheduleRunnable implements Runnable
