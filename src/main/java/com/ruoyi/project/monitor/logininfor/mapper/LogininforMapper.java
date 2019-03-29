@@ -2,6 +2,10 @@ package com.ruoyi.project.monitor.logininfor.mapper;
 
 import java.util.List;
 import com.ruoyi.project.monitor.logininfor.domain.Logininfor;
+import com.ruoyi.project.monitor.logininfor.domain.UserInfo;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * 系统访问日志情况信息 数据层
@@ -39,4 +43,18 @@ public interface LogininforMapper
      * @return 结果
      */
     public int cleanLogininfor();
+
+    /**
+     * 获取用户流量
+     * @return 用户流量
+     */
+    @Select("SELECT COUNT(t.days) AS requestCount, t.days AS date FROM ( " +
+                "SELECT login_name, DATE_FORMAT(login_time, '%Y-%m-%d') AS days " +
+                "FROM sys_logininfor l GROUP BY days, l.login_name " +
+            ") t GROUP BY t.days")
+    @Results({
+        @Result(column = "date", property = "date"),
+        @Result(column = "requestCount", property = "requestCount")
+    })
+    List<UserInfo> userInfo();
 }

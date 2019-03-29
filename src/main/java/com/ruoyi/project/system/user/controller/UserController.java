@@ -63,8 +63,7 @@ public class UserController extends BaseController
     @RequiresPermissions("system:user:export")
     @PostMapping("/export")
     @ResponseBody
-    public AjaxResult export(User user)
-    {
+    public AjaxResult export(User user) {
         List<User> list = userService.selectUserList(user);
         ExcelUtil<User> util = new ExcelUtil<User>(User.class);
         return util.exportExcel(list, "用户数据");
@@ -74,8 +73,7 @@ public class UserController extends BaseController
     @RequiresPermissions("system:user:import")
     @PostMapping("/importData")
     @ResponseBody
-    public AjaxResult importData(MultipartFile file, boolean updateSupport) throws Exception
-    {
+    public AjaxResult importData(MultipartFile file, boolean updateSupport) throws Exception {
         ExcelUtil<User> util = new ExcelUtil<User>(User.class);
         List<User> userList = util.importExcel(file.getInputStream());
         String message = userService.importUser(userList, updateSupport);
@@ -85,8 +83,7 @@ public class UserController extends BaseController
     @RequiresPermissions("system:user:view")
     @GetMapping("/importTemplate")
     @ResponseBody
-    public AjaxResult importTemplate()
-    {
+    public AjaxResult importTemplate() {
         ExcelUtil<User> util = new ExcelUtil<User>(User.class);
         return util.importTemplateExcel("用户数据");
     }

@@ -123,6 +123,14 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils
     }
 
     /**
+     * 自定义日期格式 date --> String
+     */
+    public static String dateToString(Date date){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(date);
+    }
+
+    /**
      * 获取服务器启动时间
      */
     public static Date getServerStartDate()

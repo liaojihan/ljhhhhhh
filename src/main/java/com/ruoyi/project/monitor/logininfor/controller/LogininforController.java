@@ -1,6 +1,6 @@
 package com.ruoyi.project.monitor.logininfor.controller;
 
-import java.util.List;
+import java.util.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -76,5 +76,13 @@ public class LogininforController extends BaseController
     {
         logininforService.cleanLogininfor();
         return success();
+    }
+
+    //用户流量
+    @GetMapping("/userInfo")
+    @Log(title = "用户流量", businessType = BusinessType.OTHER)
+    @ResponseBody
+    public Map<String, Object> userInfo() {
+        return logininforService.userInfo();
     }
 }

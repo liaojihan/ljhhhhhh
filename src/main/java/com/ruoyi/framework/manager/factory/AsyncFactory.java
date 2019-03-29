@@ -89,15 +89,15 @@ public class AsyncFactory
      * @param args 列表
      * @return 任务task
      */
-    public static TimerTask recordLogininfor(final String username, final String status, final String message, final Object... args)
-    {
-        final UserAgent userAgent = UserAgent.parseUserAgentString(ServletUtils.getRequest().getHeader("User-Agent"));
+    public static TimerTask recordLogininfor(final String username, final String status,
+                                             final String message, final Object... args) {
+        /* 获取http用户信息: ip、name、浏览器等... */
+        final UserAgent userAgent = UserAgent.
+                parseUserAgentString(ServletUtils.getRequest().getHeader("User-Agent"));
         final String ip = ShiroUtils.getIp();
-        return new TimerTask()
-        {
+        return new TimerTask() {
             @Override
-            public void run()
-            {
+            public void run() {
                 StringBuilder s = new StringBuilder();
                 s.append(LogUtils.getBlock(ip));
                 s.append(AddressUtils.getRealAddressByIP(ip));

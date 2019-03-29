@@ -64,4 +64,5 @@ public interface IUserOnlineService
      * @return 会话集合
      */
     public List<UserOnline> selectOnlineByExpired(Date expiredDate);
+
 }

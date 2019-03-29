@@ -49,4 +49,9 @@ public interface UserOnlineMapper
      * @return 会话集合
      */
     public List<UserOnline> selectOnlineByExpired(String lastAccessTime);
+
+    /**
+     * 查询是否被强退
+     */
+    UserOnline isStrongRetreat(String sessionId);
 }

@@ -38,7 +38,7 @@ import com.ruoyi.project.system.user.domain.User;
  * 
  * @author ljh
  */
-public class    UserRealm extends AuthorizingRealm
+public class UserRealm extends AuthorizingRealm
 {
     private static final Logger log = LoggerFactory.getLogger(UserRealm.class);
 
@@ -52,7 +52,7 @@ public class    UserRealm extends AuthorizingRealm
     private LoginService loginService;
 
     /**
-     * 授权
+     * 注入权限
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection arg0)

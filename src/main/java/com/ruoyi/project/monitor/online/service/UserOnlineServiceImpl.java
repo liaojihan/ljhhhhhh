@@ -2,6 +2,8 @@ package com.ruoyi.project.monitor.online.service;
 
 import java.util.Date;
 import java.util.List;
+
+import com.ruoyi.framework.web.controller.WebSocketServer;
 import org.apache.shiro.session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -80,13 +82,13 @@ public class UserOnlineServiceImpl implements IUserOnlineService
     @Override
     public void saveOnline(UserOnline online)
     {
+        WebSocketServer.userNo = online.getSessionId();
         userOnlineDao.saveOnline(online);
     }
 
     /**
      * 查询会话集合
-     * 
-     * @param pageUtilEntity 分页参数
+     *
      */
     @Override
     public List<UserOnline> selectUserOnlineList(UserOnline userOnline)
@@ -113,8 +115,7 @@ public class UserOnlineServiceImpl implements IUserOnlineService
 
     /**
      * 查询会话集合
-     * 
-     * @param online 会话信息
+     *
      */
     @Override
     public List<UserOnline> selectOnlineByExpired(Date expiredDate)
@@ -122,4 +123,5 @@ public class UserOnlineServiceImpl implements IUserOnlineService
         String lastAccessTime = DateUtils.parseDateToStr(DateUtils.YYYY_MM_DD_HH_MM_SS, expiredDate);
         return userOnlineDao.selectOnlineByExpired(lastAccessTime);
     }
+
 }

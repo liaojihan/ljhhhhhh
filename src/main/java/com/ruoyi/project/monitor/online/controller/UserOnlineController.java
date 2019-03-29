@@ -1,6 +1,9 @@
 package com.ruoyi.project.monitor.online.controller;
 
+import java.io.IOException;
 import java.util.List;
+
+import com.ruoyi.framework.web.controller.WebSocketServer;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,7 +48,7 @@ public class UserOnlineController extends BaseController
         return prefix + "/online";
     }
 
-    @RequiresPermissions("monitor:online:list")
+    @RequiresPermissions("monitor::onlinelist")
     @PostMapping("/list")
     @ResponseBody
     public TableDataInfo list(UserOnline userOnline)
@@ -82,6 +85,8 @@ public class UserOnlineController extends BaseController
             online.setStatus(OnlineStatus.off_line);
             userOnlineService.saveOnline(online);
         }
+
+
         return success();
     }
 
@@ -109,6 +114,12 @@ public class UserOnlineController extends BaseController
         onlineSessionDAO.update(onlineSession);
         online.setStatus(OnlineStatus.off_line);
         userOnlineService.saveOnline(online);
+
+        try {
+            WebSocketServer.sendToUser(sessionId);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return success();
     }
 }

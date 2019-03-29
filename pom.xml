@@ -180,6 +180,12 @@
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
 
+		<!-- Web socket -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+
 		<!-- 定时任务 -->
 		<dependency>
 			<groupId>org.quartz-scheduler</groupId>

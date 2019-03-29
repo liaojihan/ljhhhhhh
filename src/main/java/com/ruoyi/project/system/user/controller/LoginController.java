@@ -9,6 +9,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.ruoyi.common.utils.ServletUtils;
 import com.ruoyi.common.utils.StringUtils;
@@ -27,8 +28,7 @@ public class LoginController extends BaseController
     public String login(HttpServletRequest request, HttpServletResponse response)
     {
         // 如果是Ajax请求，返回Json字符串。
-        if (ServletUtils.isAjaxRequest(request))
-        {
+        if (ServletUtils.isAjaxRequest(request)) {
             return ServletUtils.renderString(response, "{\"code\":\"1\",\"msg\":\"未登录或登录超时。请重新登录\"}");
         }
 

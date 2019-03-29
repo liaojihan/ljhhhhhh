@@ -1,6 +1,9 @@
 package com.ruoyi.project.monitor.logininfor.service;
 
-import java.util.List;
+import java.util.*;
+
+import com.ruoyi.common.utils.DateUtils;
+import com.ruoyi.project.monitor.logininfor.domain.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ruoyi.common.utils.text.Convert;
@@ -60,5 +63,21 @@ public class LogininforServiceImpl implements ILogininforService
     public void cleanLogininfor()
     {
         logininforMapper.cleanLogininfor();
+    }
+
+
+    @Override
+    public Map<String, Object> userInfo() {
+        List<UserInfo> userInfos = logininforMapper.userInfo();
+        Map<String, Object> maps = new HashMap<>();
+        List<Integer> infoList = new ArrayList<>();
+        List<String> dateList = new ArrayList<>();
+        for (UserInfo info: userInfos){
+            infoList.add(info.getRequestCount());
+            dateList.add(DateUtils.dateToString(info.getDate()));
+        }
+        maps.put("info", infoList);
+        maps.put("date", dateList);
+        return maps;
     }
 }

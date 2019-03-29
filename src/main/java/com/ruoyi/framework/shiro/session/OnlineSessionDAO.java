@@ -74,6 +74,7 @@ public class OnlineSessionDAO extends EnterpriseCacheSessionDAO
      */
     public void syncToDb(OnlineSession onlineSession)
     {
+        System.out.println("onlineSession id" + onlineSession.getUserId());
         Date lastSyncTimestamp = (Date) onlineSession.getAttribute(LAST_SYNC_DB_TIMESTAMP);
         if (lastSyncTimestamp != null)
         {
@@ -87,12 +88,12 @@ public class OnlineSessionDAO extends EnterpriseCacheSessionDAO
             boolean isGuest = onlineSession.getUserId() == null || onlineSession.getUserId() == 0L;
 
             // session 数据变更了 同步
-            if (isGuest == false && onlineSession.isAttributeChanged())
+            if (!isGuest && onlineSession.isAttributeChanged())
             {
                 needSync = true;
             }
 
-            if (needSync == false)
+            if (!needSync)
             {
                 return;
             }

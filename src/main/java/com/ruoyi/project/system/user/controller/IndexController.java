@@ -10,6 +10,7 @@ import com.ruoyi.framework.web.controller.BaseController;
 import com.ruoyi.project.system.menu.domain.Menu;
 import com.ruoyi.project.system.menu.service.IMenuService;
 import com.ruoyi.project.system.user.domain.User;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 首页 业务处理

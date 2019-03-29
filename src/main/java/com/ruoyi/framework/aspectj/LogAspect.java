@@ -30,15 +30,12 @@ import com.ruoyi.project.system.user.domain.User;
  */
 @Aspect
 @Component
-public class LogAspect
-{
+public class LogAspect {
     private static final Logger log = LoggerFactory.getLogger(LogAspect.class);
 
     // 配置织入点
     @Pointcut("@annotation(com.ruoyi.framework.aspectj.lang.annotation.Log)")
-    public void logPointCut()
-    {
-    }
+    public void logPointCut() {}
 
     /**
      * 前置通知 用于拦截操作
@@ -145,7 +142,6 @@ public class LogAspect
      * 获取请求的参数，放到log中
      * 
      * @param operLog
-     * @param request
      */
     private void setRequestValue(OperLog operLog)
     {

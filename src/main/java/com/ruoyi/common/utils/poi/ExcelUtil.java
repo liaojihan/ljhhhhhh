@@ -103,8 +103,7 @@ public class ExcelUtil<T>
         this.clazz = clazz;
     }
 
-    public void init(List<T> list, String sheetName, Type type)
-    {
+    public void init(List<T> list, String sheetName, Type type)  {
         if (list == null)
         {
             list = new ArrayList<T>();
@@ -122,8 +121,7 @@ public class ExcelUtil<T>
      * @param input 输入流
      * @return 转换后集合
      */
-    public List<T> importExcel(InputStream is) throws Exception
-    {
+    public List<T> importExcel(InputStream is) throws Exception {
         return importExcel(StringUtils.EMPTY, is);
     }
 
@@ -134,8 +132,7 @@ public class ExcelUtil<T>
      * @param input 输入流
      * @return 转换后集合
      */
-    public List<T> importExcel(String sheetName, InputStream is) throws Exception
-    {
+    public List<T> importExcel(String sheetName, InputStream is) throws Exception {
         this.type = Type.IMPORT;
         this.wb = WorkbookFactory.create(is);
         List<T> list = new ArrayList<T>();
@@ -276,8 +273,7 @@ public class ExcelUtil<T>
      * @param sheetName 工作表的名称
      * @return 结果
      */
-    public AjaxResult importTemplateExcel(String sheetName)
-    {
+    public AjaxResult importTemplateExcel(String sheetName) {
         this.init(null, sheetName, Type.IMPORT);
         return exportExcel();
     }
@@ -287,11 +283,9 @@ public class ExcelUtil<T>
      * 
      * @return 结果
      */
-    public AjaxResult exportExcel()
-    {
+    public AjaxResult exportExcel() {
         OutputStream out = null;
-        try
-        {
+        try{
             // 取出一共有多少个sheet.
             double sheetNo = Math.ceil(list.size() / sheetSize);
             for (int index = 0; index <= sheetNo; index++)

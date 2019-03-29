@@ -29,8 +29,7 @@ public class BaseController
     public void initBinder(WebDataBinder binder)
     {
         // Date 类型转换
-        binder.registerCustomEditor(Date.class, new PropertyEditorSupport()
-        {
+        binder.registerCustomEditor(Date.class, new PropertyEditorSupport() {
             @Override
             public void setAsText(String text)
             {

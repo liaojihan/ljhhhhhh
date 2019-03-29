@@ -1,7 +1,10 @@
 package com.ruoyi.project.monitor.logininfor.service;
 
 import java.util.List;
+import java.util.Map;
+
 import com.ruoyi.project.monitor.logininfor.domain.Logininfor;
+import com.ruoyi.project.monitor.logininfor.domain.UserInfo;
 
 /**
  * 系统访问日志情况信息 服务层
@@ -37,4 +40,9 @@ public interface ILogininforService
      * 清空系统登录日志
      */
     public void cleanLogininfor();
+
+    /**
+     * 用户流量
+     */
+    Map<String, Object> userInfo();
 }

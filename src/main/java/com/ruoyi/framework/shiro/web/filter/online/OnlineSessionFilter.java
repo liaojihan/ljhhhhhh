@@ -20,8 +20,7 @@ import com.ruoyi.project.system.user.domain.User;
  * 
  * @author ljh
  */
-public class OnlineSessionFilter extends AccessControlFilter
-{
+public class OnlineSessionFilter extends AccessControlFilter {
     /**
      * 强制退出后重定向的地址
      */
